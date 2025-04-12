@@ -43,7 +43,10 @@ public class Main {
         petri.inserirElemento(15);
         petri.inserirElemento(16);
         petri.inserirElemento(17);
+        petri.inserirElemento(18);
         petri.ordenarCrescente();
+        petri.editarElemento(1, 18);
+        petri.removerTodasOcorrencias(18);
         petri.exibir();
     }
 }

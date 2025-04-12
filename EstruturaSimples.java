@@ -89,7 +89,11 @@ public class EstruturaSimples implements IEstruturaSimples{
 
     @Override
     public void removerTodasOcorrencias(Object elemento) {
-
+    for (int i = 0; i < tamanho; i++){
+        if (lista[i] == elemento){
+            lista[i] = null;
+        }
+    }
     }
 
     @Override
