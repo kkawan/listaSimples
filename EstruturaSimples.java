@@ -56,7 +56,7 @@ public class EstruturaSimples implements IEstruturaSimples{
             System.out.println("A lista não possui elementos para serem removidos");
         } else {
             for (int i = 0; i < tamanho; i++) {
-                if(lista[i] == elemento){
+                if(lista[i] != null && lista[i].equals(elemento)){
                     lista[i] = null;
                     break;
                 }
@@ -90,7 +90,7 @@ public class EstruturaSimples implements IEstruturaSimples{
     @Override
     public void removerTodasOcorrencias(Object elemento) {
     for (int i = 0; i < tamanho; i++){
-        if (lista[i] == elemento){
+        if (lista[i] != null && lista[i].equals(elemento)) {
             lista[i] = null;
         }
     }
@@ -119,7 +119,7 @@ public class EstruturaSimples implements IEstruturaSimples{
     @Override
     public boolean buscarElemento(Object elemento) {
         for (int i = 0; i < lista.length; i++) {
-            if (lista[i] == elemento){
+            if (lista[i].equals(elemento)){
                 System.out.println("Elemento " + elemento + " encontrado na lista");
                 return true;
             }
@@ -179,7 +179,6 @@ public class EstruturaSimples implements IEstruturaSimples{
         }
         System.out.println("A lista possui " + contador + " elementos não nulos");
         return 0;
-
     }
 
     @Override
@@ -198,10 +197,8 @@ public class EstruturaSimples implements IEstruturaSimples{
     @Override
     public void editarElemento(Object elementoAntigo, Object elementoNovo) {
         for (int i = 0; i < tamanho; i++) {
-            if (lista[i] != null) {
-                if (lista[i] == elementoAntigo){
-                    lista[i] = elementoNovo;
-                }
+            if (lista[i] != null && lista[i].equals(elementoAntigo)) {
+                lista[i] = elementoNovo;
             }
         }
     }
@@ -235,7 +232,6 @@ public class EstruturaSimples implements IEstruturaSimples{
         }
         return null;
     }
-    // fazer um metodo obter primeiro nulo
 
     @Override
     public Object obterUltimoElemento() {
@@ -247,5 +243,4 @@ public class EstruturaSimples implements IEstruturaSimples{
         }
         return null;
     }
-    //teste de mesa
 }

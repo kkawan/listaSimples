@@ -66,7 +66,7 @@ public class Main {
                 case 4:
                     System.out.print("Digite o elemento para remover: ");
                     petri.removerElemento(scanner.nextLine());
-                    break; // bug
+                    break; // check (precisa utilizar .equals invés de ==, para comparar o contéudo e não a referência)
 
                 case 5:
                     System.out.print("Digite o índice para remover: ");
@@ -84,16 +84,16 @@ public class Main {
                         seqRemover[i] = scanner.nextLine();
                     }
                     petri.removerSequencia(seqRemover);
-                    break; // bug
+                    break; // check (foi necessario colocar uma proteção contra null no metodo removerElemento() )
 
                 case 7:
                     System.out.print("Digite o elemento para remover todas as vezes que ele aparece: ");
                     petri.removerTodasOcorrencias(scanner.nextLine());
-                    break; // bug
+                    break; // check (precisava de um and != null para nao dar nullpointerexeption)
                 case 8:
                     System.out.print("Digite o elemento para buscar: ");
                     petri.buscarElemento(scanner.nextLine());
-                    break; // bug
+                    break; // check
                 case 9:
                     System.out.print("Digite o índice para buscar: ");
                     petri.buscarElementoIndice(scanner.nextInt());
@@ -120,7 +120,7 @@ public class Main {
                     System.out.print("Digite o novo elemento: ");
                     Object novo = scanner.nextLine();
                     petri.editarElemento(antigo, novo);
-                    break; // bug
+                    break; // check
                 case 15:
                     petri.limpar();
                     System.out.println("Lista limpa.");
