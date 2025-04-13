@@ -49,7 +49,6 @@ public class EstruturaSimples implements IEstruturaSimples{
 
     }
 
-    // achei estranho não possuir parametros, pq sem paramentros ele so vai remover o primeiro que ele achar na inspeção da lista
     @Override
     public boolean removerElemento(Object elemento) {
         if (estaVazia()){
@@ -144,7 +143,7 @@ public class EstruturaSimples implements IEstruturaSimples{
         for (int i = 0; i < tamanho - 1; i++) {
             for (int j = 0; j < tamanho - 1 - i; j++) {
                 if (lista[j] != null && lista[j + 1] != null) {
-                    if ((Integer) lista[j] > (Integer) lista[j + 1]) {
+                    if (((Comparable) lista[j]).compareTo(lista[j + 1]) > 0) { // está comparanndo como Strings, talvez um parseInt no menu resolva
                         Object aux = lista[j];
                         lista[j] = lista[j + 1];
                         lista[j + 1] = aux;
@@ -159,7 +158,7 @@ public class EstruturaSimples implements IEstruturaSimples{
         for (int i = 0; i < tamanho - 1; i++) {
             for (int j = 0; j < tamanho - 1 - i; j++) {
                 if (lista[j] != null && lista[j + 1] != null) {
-                    if ((Integer) lista[j] < (Integer) lista[j + 1]) {
+                    if  (((Comparable) lista[j]).compareTo(lista[j + 1]) < 0){
                         Object aux = lista[j];
                         lista[j] = lista[j + 1];
                         lista[j + 1] = aux;

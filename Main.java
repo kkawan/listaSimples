@@ -102,11 +102,11 @@ public class Main {
                 case 10:
                     petri.ordenarCrescente();
                     System.out.println("Lista ordenada em ordem crescente.");
-                    break; // bug
+                    break; // check
                 case 11:
                     petri.ordenarDecrescente();
                     System.out.println("Lista ordenada em ordem decrescente.");
-                    break; //bug
+                    break; //check (tive que usar comparable para genarilização pois to usando Object como tipo padrão, mas acho que o correto talvez seria so aceitar Integer?)
                 case 12:
                     petri.quantidadeElementos();
                     break; // check
