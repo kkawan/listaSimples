@@ -134,7 +134,7 @@ public class EstruturaSimples implements IEstruturaSimples{
             System.out.println("Esse indice está vazio");
         }
         else {
-            System.out.println("Este indice contém" + lista[indice]);
+            System.out.println("Este indice contém " + lista[indice]);
         }
         return null;
     }
